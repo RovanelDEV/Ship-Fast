@@ -1,0 +1,267 @@
+/* Sanitazer le CSS */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+figure {
+    padding: 0;
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Le container */
+
+.container {
+
+    padding: 20px 30px;
+}
+
+/* L'annonce */
+
+.annonce {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.annonce marquee {
+    color: white;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+
+/* Le header du site */
+
+.header {
+    height: 80px;
+}
+
+.header .container {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 3px grey;
+
+}
+
+/* Le nom du site */
+
+.header .container .name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .container .name p {
+    font-size: 10px;
+    color: grey;
+}
+
+
+.header .container img {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+/* Stylisons le bouton de navigation */
+
+.nav-button {
+    padding: 0;
+    outline: none;
+    border: none;
+    /*background-color: white;*/
+    cursor: pointer;
+}
+
+
+/* Les lignes décoratives du bouton maintenant */
+
+.nav-button::before,
+.nav-button::after {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 32px;
+    height: 4px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.open .nav-button::before
+
+/*.nav-button::after*/
+    {
+    background-color: white;
+}
+
+.nav-button::before {
+    transform: translateY(-5px);
+}
+
+.nav-button::after {
+    transform: translateY(5px);
+}
+
+.open .nav-button::before {
+    transform: translateY(3px) rotate(45deg);
+}
+
+.open .nav-button::after {
+    transform: translate(-3px) rotate(-45deg);
+}
+
+/* Option du menu apparaissant */
+
+.nav ul {
+
+    margin-top: 30px;
+
+    padding: 50px 10px 40px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    box-shadow: 0 4px 3px grey;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid grey;
+
+    transform: scale(0, 0);
+    transform-origin: right top;
+    transition: transform 0.8s;
+}
+
+.open .nav ul:last-child {
+    background-color: pink;
+}
+
+.open .nav ul:first-child {
+    background-color: white;
+}
+
+.open .nav ul {
+    transform: scale(1, 1);
+    background-color: white;
+}
+
+.open body {
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    transition: background-color 0.8s;
+}
+
+
+/* Stylisons la partie des produits */
+
+.produits .container h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+}
+
+.liste {
+    width: 100%;
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /*gap: 40px;*/
+}
+
+.produit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.produit:not(:last-child) {
+    margin-bottom: 90px;
+}
+
+.produit p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.produit a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bolder;
+    border: 2px pink solid;
+    border-radius: 25px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+
+    transition: background-color 0.7s ease;
+}
+
+.produit a:hover,
+.produit a:focus {
+    background-color: pink;
+}
+
+.produit figure {
+
+    width: 261px;
+    height: 150px;
+    background-color: hsl(0, 0%, 50%);
+    border-radius: 10px;
+
+}
+
+/* La version mobile du footer */
+
+
+.footer {
+    height: 100px;
+    background-color: black;
+}
+
+.footer .container {
+    background-color: black;
+}
+
+.footer:not(:last-child) {
+    margin-bottom: 67px;
+}
+
+.rs img {
+    height: 30px;
+    width: 30px;
+}
+
+.footer h2 {
+
+    font-family: 'Courier New', Courier, monospace;
+    color: white
+}
+
+.footer h2 {
+    margin-top: 50px;
+}
+
+.footer img {
+    margin-top: 40px;
+}
